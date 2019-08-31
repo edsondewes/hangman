@@ -1,0 +1,41 @@
+{
+  "name": "hangman-react-app",
+  "version": "1.0.0",
+  "description": "React app to play hangman",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack/webpack-dev.js",
+    "build": "rimraf ./dist && webpack --config ./webpack/webpack-prod.js --progress"
+  },
+  "keywords": [
+    "react",
+    "hangman"
+  ],
+  "author": "Edson Dewes",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
+    "eslint": "^6.3.0",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "prop-types": "^15.7.2",
+    "rimraf": "^3.0.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "@primer/octicons-react": "^9.1.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "reactstrap": "^8.0.1"
+  }
+}

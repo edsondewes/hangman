@@ -1,0 +1,48 @@
+version: '3.7'
+
+services:
+
+  api:
+    build:
+      context: ./src/api/
+    image: edsondewes/hangman:api
+    environment:
+      MongoDb__Host: "mongodb://mongo:27017"
+      MongoDb__Database: "hangman"
+    labels:
+      - "traefik.backend=api"
+      - "traefik.frontend.rule=PathPrefix:/api"
+      - "traefik.port=80"
+
+  web:
+    build:
+      context: ./src/react-app/
+    image: edsondewes/hangman:app
+    labels:
+      - "traefik.backend=app"
+      - "traefik.frontend.rule=PathPrefix:/"
+      - "traefik.port=80"
+
+  mongo:
+    image: mongo
+    ports:
+      - target: 27017
+        published: 27017
+        protocol: tcp
+        mode: host
+    volumes:
+      - mongo-data:/data/db
+
+  proxy:
+    image: traefik:1.7-alpine
+    labels:
+      - "traefik.enable=false"
+    ports:
+      - "8080:80"
+      - "8081:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/etc/traefik/traefik.toml
+
+volumes:
+  mongo-data:
