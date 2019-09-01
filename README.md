@@ -2,7 +2,10 @@
 Simple hangman game using .NET Core and React.
 
 ## Running with docker-compose
-Make sure you have [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) installed on your machine.
+What you need for this step:
+ - [docker](https://docs.docker.com/install/)
+ - [docker-compose](https://docs.docker.com/compose/install/)
+
 Go to the project root folder and start the containers using the docker-compose CLI:
 
 ```bash
@@ -17,7 +20,10 @@ If you don't want to (or can't) use the port 8080, you can change it by editing 
 ## Running in development mode
 
 ### .NET API
-You can run the dotnet API using the Visual Studio runner or via the CLI:
+What you need for this step:
+ - [.NET Core SDK](https://dotnet.microsoft.com/download)
+
+You can run the dotnet API using the Visual Studio runner or via CLI:
 ```bash
 cd src/api/Hangman.Api/
 dotnet run
@@ -25,6 +31,9 @@ dotnet run
 The API will start at http://localhost:5000.
 
 ### React App
+What you need for this step:
+ - [NodeJS](https://nodejs.org/en/download/)
+
 Go to the React App folder and make sure you have installed all packages:
 ```bash
 cd src/react-app/
