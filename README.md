@@ -57,6 +57,13 @@ You can switch to a MongoDb database adding some settings to your *appsettings.j
 ```
 If the startup detected this setting is set, it will use the MongoDb persistence.
 
+## Running tests
+Go to the project root folder and run the tests using the dotnet CLI:
+```bash
+dotnet test
+```
+You can also open the solution using Visual Studio and run the tests through the Test Explorer window.
+
 ## Playing the game
 There are two modes: easy and hard.
 The easy mode gives you two helps and three chances of choosing the wrong letter.
